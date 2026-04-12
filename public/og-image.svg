@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="ogTitle ogDesc">
+  <title id="ogTitle">Gear Up Motor Driving School</title>
+  <desc id="ogDesc">Drive with confidence under the guidance of Mrs. Manisha Jangam.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF8"/>
+      <stop offset="55%" stop-color="#F7F1E3"/>
+      <stop offset="100%" stop-color="#FFE9DA"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="20%" cy="15%" r="70%">
+      <stop offset="0%" stop-color="#F5D547" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#F5D547" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="1035" cy="118" r="118" fill="#F5222A" opacity="0.08"/>
+  <circle cx="116" cy="560" r="182" fill="#111111" opacity="0.06"/>
+  <g transform="translate(92 145)">
+    <circle cx="110" cy="110" r="102" fill="#111111"/>
+    <circle cx="110" cy="110" r="78" fill="#F5222A"/>
+    <circle cx="110" cy="110" r="56" fill="#F7F1E3" stroke="#111111" stroke-width="8"/>
+    <path d="M100 54 176 110 139 110 139 170 74 124 106 124 106 76 100 54Z" fill="#F5222A" stroke="#111111" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M38 83a86 86 0 0 1 126-14" fill="none" stroke="#F5D547" stroke-linecap="round" stroke-width="10"/>
+  </g>
+  <text x="370" y="205" fill="#F5222A" font-family="Pacifico, cursive" font-size="54">Gear Up</text>
+  <text x="370" y="285" fill="#111111" font-family="Poppins, Arial, sans-serif" font-size="72" font-weight="700">Drive With Confidence</text>
+  <text x="370" y="354" fill="#433D39" font-family="Poppins, Arial, sans-serif" font-size="34">
+    Modern, confidence-first training for two-wheelers and four-wheelers
+  </text>
+  <text x="370" y="405" fill="#433D39" font-family="Poppins, Arial, sans-serif" font-size="34">
+    led by Mrs. Manisha Jangam in Kasarvadavali, Thane.
+  </text>
+  <rect x="370" y="466" width="318" height="66" rx="33" fill="#111111"/>
+  <text x="409" y="509" fill="#FFFDF8" font-family="Poppins, Arial, sans-serif" font-size="30" font-weight="600">
+    Enroll for your first session
+  </text>
+</svg>

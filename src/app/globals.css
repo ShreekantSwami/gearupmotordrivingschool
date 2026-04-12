@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f1e3;
+  --foreground: #161616;
+  --brand-red: #f5222a;
+  --brand-ink: #111111;
+  --brand-yellow: #f5d547;
+  --brand-cream: #fff9ef;
+  --brand-soft: #fff6e7;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-red: var(--brand-red);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-soft: var(--brand-soft);
+  --font-sans: var(--font-poppins);
+  --font-display: var(--font-pacifico);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at top left,
+      rgb(245 213 71 / 0.33),
+      transparent 18%
+    ),
+    radial-gradient(circle at top right, rgb(245 34 42 / 0.14), transparent 20%),
+    linear-gradient(180deg, #fffdf8 0%, #f7f1e3 52%, #fffaf2 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+section {
+  scroll-margin-top: 7rem;
+}
+
+::selection {
+  background: var(--brand-red);
+  color: #fff;
+}
+
+.site-shell {
+  width: min(100%, 80rem);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .site-shell {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-shell {
+    padding-inline: 2rem;
+  }
+}
+
+.surface-card {
+  background: rgb(255 255 255 / 0.78);
+  border: 1px solid rgb(17 17 17 / 0.08);
+  box-shadow: 0 24px 60px rgb(17 17 17 / 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.hero-card {
+  background: radial-gradient(
+      circle at top right,
+      rgb(245 213 71 / 0.18),
+      transparent 30%
+    ), linear-gradient(145deg, rgb(17 17 17 / 0.96), rgb(17 17 17 / 0.82));
+  box-shadow: 0 30px 80px rgb(17 17 17 / 0.22);
+}
+
+.grid-fade {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-fade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgb(17 17 17 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(17 17 17 / 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(180deg, rgb(0 0 0 / 0.45), transparent 85%);
+  pointer-events: none;
+}
+
+.section-glow {
+  position: relative;
+}
+
+.section-glow::after {
+  content: "";
+  position: absolute;
+  inset: auto 10% -10% 10%;
+  height: 9rem;
+  background: radial-gradient(circle, rgb(245 34 42 / 0.2), transparent 70%);
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgb(17 17 17 / 0.1);
+  background: rgb(255 255 255 / 0.76);
+  padding: 0.55rem 1rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
 }
