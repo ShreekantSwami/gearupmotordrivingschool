@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Pacifico, Poppins } from "next/font/google";
+import { Geist } from "next/font/google";
 
 import { MobileCta } from "@/components/mobile-cta";
 import { SiteFooter } from "@/components/site-footer";
@@ -7,17 +7,11 @@ import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/data/site";
 
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const geist = Geist({
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const pacifico = Pacifico({
-  variable: "--font-pacifico",
-  subsets: ["latin"],
-  weight: "400",
 });
 
 const siteUrl =
@@ -59,11 +53,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${poppins.variable} ${pacifico.variable} antialiased`}
-    >
-      <body className="min-h-screen">
+    <html lang="en" className={cn("antialiased", geist.variable, "font-sans")}>
+      <body className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
         <SiteHeader />
         {children}
         <SiteFooter />

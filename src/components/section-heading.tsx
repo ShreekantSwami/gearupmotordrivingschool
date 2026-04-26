@@ -16,13 +16,15 @@ export function SectionHeading({
 
   return (
     <div className={alignment}>
-      <p className={`eyebrow ${align === "center" ? "mx-auto" : ""}`.trim()}>
+      <p
+        className={`inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium text-brand-red bg-brand-red/5 mb-6 ${align === "center" ? "mx-auto" : ""}`.trim()}
+      >
         {eyebrow}
       </p>
-      <h2 className="mt-5 text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
+      <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         {title}
       </h2>
-      <p className="mt-4 text-base leading-8 text-brand-ink/70 sm:text-lg">
+      <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
         {description}
       </p>
     </div>

@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/fade-in";
 import type { ReactNode } from "react";
 
 type PageIntroProps = {
@@ -14,20 +15,26 @@ export function PageIntro({
   actions,
 }: PageIntroProps) {
   return (
-    <section className="section-glow pb-10 pt-10">
+    <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24">
+      <div className="absolute inset-0 -z-10 bg-background overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] opacity-20 bg-gradient-to-tr from-brand-red/20 via-brand-yellow/10 to-transparent blur-[80px] rounded-full pointer-events-none" />
+      </div>
+
       <div className="site-shell">
-        <div className="surface-card grid-fade rounded-[32px] px-6 py-10 sm:px-8 lg:px-10">
-          <p className="eyebrow">{eyebrow}</p>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-brand-ink sm:text-5xl">
+        <FadeIn className="max-w-4xl">
+          <div className="inline-flex items-center gap-2 rounded-full border bg-background/50 backdrop-blur-md px-3 py-1 text-sm font-medium text-muted-foreground mb-6 shadow-sm">
+            {eyebrow}
+          </div>
+          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-brand-ink/72 sm:text-lg">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
             {description}
           </p>
           {actions ? (
-            <div className="mt-8 flex flex-wrap gap-3">{actions}</div>
+            <div className="mt-10 flex flex-wrap gap-4">{actions}</div>
           ) : null}
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
