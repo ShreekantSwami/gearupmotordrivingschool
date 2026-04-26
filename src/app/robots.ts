@@ -1,9 +1,9 @@
+import { getSiteUrl } from "@/lib/site-url";
 import type { MetadataRoute } from "next";
 
-const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://gearup.example.com";
-
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = getSiteUrl().toString().replace(/\/$/, "");
+
   return {
     rules: {
       userAgent: "*",

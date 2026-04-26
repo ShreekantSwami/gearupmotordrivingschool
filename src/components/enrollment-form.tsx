@@ -5,6 +5,8 @@ import { useState } from "react";
 const inputClassName =
   "w-full rounded-[20px] border border-brand-ink/10 bg-white px-4 py-3 text-sm text-brand-ink outline-none transition placeholder:text-brand-ink/40 focus:border-brand-red focus:ring-4 focus:ring-brand-red/10";
 
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "");
+
 type FormStatus =
   | { type: "idle"; message: string }
   | { type: "loading"; message: string }
@@ -19,6 +21,11 @@ const initialStatus: FormStatus = {
 
 export function EnrollmentForm() {
   const [status, setStatus] = useState<FormStatus>(initialStatus);
+  const runtimeSiteUrl =
+    typeof window !== "undefined"
+      ? window.location.origin.replace(/\/+$/, "")
+      : undefined;
+  const siteUrl = configuredSiteUrl ?? runtimeSiteUrl;
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -90,7 +97,11 @@ export function EnrollmentForm() {
             track for your goals.
           </p>
         </div>
-        <input type="hidden" name="_next" value="http://localhost:3000" />
+        <input
+          type="hidden"
+          name="_next"
+          value={siteUrl ? `${siteUrl}/` : "/"}
+        />
         <input type="hidden" name="_captcha" value="false" />
 
         <div className="grid gap-4 sm:grid-cols-2">

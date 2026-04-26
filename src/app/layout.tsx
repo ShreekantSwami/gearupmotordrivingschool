@@ -5,6 +5,7 @@ import { MobileCta } from "@/components/mobile-cta";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/data/site";
+import { getSiteUrl } from "@/lib/site-url";
 
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -14,11 +15,10 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://gearup.example.com";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: siteUrl,
   title: {
     default: `${siteConfig.name} | Drive with Confidence`,
     template: `%s | ${siteConfig.name}`,
