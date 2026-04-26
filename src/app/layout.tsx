@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "/og-image.svg",
-        width: 1200,
-        height: 630,
+        url: "/assets/OG_IMAGE.png",
+        width: 1536,
+        height: 1024,
         alt: `${siteConfig.name} social preview`,
       },
     ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | Drive with Confidence`,
     description: siteConfig.description,
-    images: ["/og-image.svg"],
+    images: ["/assets/OG_IMAGE.png"],
   },
 };
 
